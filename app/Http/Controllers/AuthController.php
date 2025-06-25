@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\auth;
 
 
 
@@ -44,8 +44,10 @@ class AuthController extends Controller
             //true
             $User = User::where(['email' => $request->email])->first();
             Auth::login($User);
+            //false
+            return redirect('/');
         }
-        //false
-        return redirect('/');
+        return redirect('login')->with ('error', 'Email /password salah');
     }
+    public function logout(){}
 }

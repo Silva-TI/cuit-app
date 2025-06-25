@@ -9,6 +9,7 @@
 <body class="bg-gray-100 text-gray-800">
 <p>Halo, {{ Auth::user()->name }}</p>
 
+
   <div class="w-[50%] mx-auto py-10">
     <!-- Textarea and Button -->
     <div class="bg-white p-6 rounded-xl shadow mb-8">
