@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInterger('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('content', 150);
             $table->timestamps();
-            $table->foregin('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
 
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
